@@ -222,3 +222,21 @@ def shuffled_deck():
 Add on when finished with above:
 Instead of closing the program when the deck is empty, create a way for the user to play again.
 '''
+player1_name = input("Player 1, what would you like your name it be?>")
+player2_name = input("Player 2, what would you like your name it be?>")
+
+print(f"Alright {player1_name} and {player2_name}, You guys will be battling eachother in a game of war")
+
+
+#deck shuffle code
+
+import random
+
+def shuffled_deck():
+    basic_deck = list(range(2,15)) * 4
+    print(basic_deck)
+    random.shuffle(basic_deck)
+
+    return basic_deck 
+    
+def player_turn(name, deck):

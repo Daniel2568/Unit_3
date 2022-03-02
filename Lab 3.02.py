@@ -14,6 +14,13 @@ The contract should be:
   def birthday_song(name):
      #your code goes here
 
+     name = input("What is your name>")
+
+def biirthday_song(name):
+  print(f"Happy Birthday to you    Happy Birthday to you   Happy Birthday dear {name}   Happy Birthday to you")
+
+biirthday_song(name)
+
 
 Lab Exercise 2
 ---------------
@@ -32,9 +39,16 @@ What is different about passing in a list as an argument?
 Read about list aliasing in section 3.4 of the associated reading, and write down what is happening in this case.
 Remember, the associated reading is in the "SWBAT" section on moodle!
 '''
-def birthday_song(name):
-  (name) = input("What is your name?>")
-  print("Happy Birthday to you")
-  print("Happy Birthday to you")
-  print(f"Happy Birthday dear{name}")
-  print("Happy Birthday to you")
+import random 
+
+number = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+
+def random_cards():
+  print(random.choice(number))
+  print(random.choice(number))
+  print(random.choice(number))
+  print(random.choice(number))
+  print(random.choice(number))
+
+random_cards()
+ 
