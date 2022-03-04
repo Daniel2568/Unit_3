@@ -30,3 +30,14 @@ Maybe
 
 Outlook is not good
 '''
+
+import random 
+
+eight_ball_answer = ['Outlook is good', 'Ask again later', 'Yes', 'No', 'Most likely no', 'Most likely yes', 'Maybe', 'Outlook is not good']
+
+input("Ask the eight ball what will become of your fate.>")
+
+def random_answer():
+    print(random.choice(eight_ball_answer))
+
+random_answer()
