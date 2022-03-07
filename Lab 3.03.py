@@ -233,6 +233,7 @@ print(f"Alright {player1_name} and {player2_name}, You guys will be battling eac
 #deck shuffle code
 
 import random
+import re
 
 def shuffled_deck():
     basic_deck = list(range(2,15)) * 4
@@ -248,43 +249,57 @@ def player_turn(name, deck):
     return card 
 
 
-#create a deck of shuffled crads 
-deck = shuffled_deck
-name = input("Enter your name>")
+reset = True
 
-#Player decks 
-player1_deck = deck[:26]
-player2_deck = deck[26:]
+while reset: 
+    #create a deck of shuffled crads 
+    deck = shuffled_deck()
 
-#player scores
-player_score = 0
-computer_score = 0
-points_at_stake = 2
+    #Player decks 
+    player1_deck = deck[:26]
+    player2_deck = deck[26:]
 
-while len (player1_deck) > 0:
-    print(f"{name}'s score: {player_score}")
-    print(f"Computer's score: {computer_score}")
-    input("Press enter for round.")
-    print ()
-    card1 = player_turn(name, player1_deck)
-    card2 = player_turn("Computer", player2_deck)
+    #player scores
+    player1_score = 0
+    player2_score = 0
+    points_at_stake = 2
 
-    if card1 > card2:
-        print(f"{name} won this time, and recieves {points_at_stake} points.")
-        player_score += points_at_stake
-    elif card1 > card2:
-        print(f"Computer won this time, and recieves {points_at_stake} points.")
-        computer_score += points_at_stake
-    else:
-        print("WAR")
-        points_at_stake += 2
+    while len (player1_deck) > 0:
+        print(f"{player1_name}'s score: {player1_score}")
+        print(f"{player2_name}'s score: {player2_score}")
+        input("Press enter for round.")
+        print ()
+        card1 = player_turn({player1_name}, {player1_deck})
+        card2 = player_turn({player2_name}, {player2_deck})
+
+        if card1 > card2:
+            print(f"{player1_name} won this time, and recieves {points_at_stake} points.")
+            player1_score += points_at_stake
+        elif card1 > card2:
+            print(f"{player2_name} won this time, and recieves {points_at_stake} points.")
+            player2_score += points_at_stake
+        else:
+            print("WAR")
+            points_at_stake += 2
 
 
 
     print("Game over, no more cards")
-    print(f"{name}'s score: {player_score}")
-    print(f"Computer score: {computer_score}")
-    if player_score > computer_score:
-        print(f"{name} won!")
+    print(f"{player1_name}'s score: {player1_score}")
+    print(f"{player2_name} score: {player2_score}")
+    if player1_score > player2_score:
+        print(f"{player1_name} won!")    
+    elif player2_score > player1_score:
+        print(f"{player2_name} won!")
     else:
-        ("Computer won")
+        print("The game was a tie")
+
+#restart the game 
+player_choice = input("Would you like to play again? (y/n)")
+
+if player_choice == 'y' :
+    print("Enjoy the next game!")
+else:
+    print("Thanks for playing!")
+    reset = False 
+
