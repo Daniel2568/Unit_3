@@ -268,7 +268,7 @@ while reset:
         print(f"{player1_name}'s score: {player1_score}")
         print(f"{player2_name}'s score: {player2_score}")
         input("Press enter for round.")
-        print ()
+        print()
         card1 = player_turn({player1_name}, {player1_deck})
         card2 = player_turn({player2_name}, {player2_deck})
 
