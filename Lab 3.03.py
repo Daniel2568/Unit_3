@@ -233,7 +233,7 @@ print(f"Alright {player1_name} and {player2_name}, You guys will be battling eac
 #deck shuffle code
 
 import random
-import re
+
 
 def shuffled_deck():
     basic_deck = list(range(2,15)) * 4
