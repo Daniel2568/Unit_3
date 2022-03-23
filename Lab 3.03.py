@@ -269,8 +269,8 @@ while reset:
         print(f"{player2_name}'s score: {player2_score}")
         input("Press enter for round.")
         print()
-        card1 = player_turn({player1_name}, {player1_deck})
-        card2 = player_turn({player2_name}, {player2_deck})
+        card1 = player_turn(player1_name, player1_deck)
+        card2 = player_turn(player2_name, player2_deck)
 
         if card1 > card2:
             print(f"{player1_name} won this time, and recieves {points_at_stake} points.")
