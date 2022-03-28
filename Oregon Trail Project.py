@@ -39,6 +39,7 @@ def travel():
     miles_to_go = miles_traveled
 
     add_day(days_this_travel)
+    consume_food(days_this_travel)
 
 def add_day(days):
     global current_day, current_month
@@ -59,9 +60,9 @@ def add_day(days):
     consume_food(days)
 
 def consume_food(days):
-    global food
+    global consumed_food
 
-    food_consumed_this_turn = 5 * days
+    consumed_food = 5 * days
     
      
 
@@ -86,6 +87,7 @@ def rest():
         health += 1
 
     add_day(days_this_rest)
+    consume_food(days_this_rest)
 
 def hunt():
     global food
@@ -94,6 +96,10 @@ def hunt():
     food += 100
 
     add_day(days_this_hunt)
+
+def world_event():
+    if 
+
 
 def help():
     print("Your goal is to get to Oregon City, Oregon by 12/31 just before winter starts or you die\nRemember you can travel, rest, hunt, ask for help, check your player status, or quit\n There are chances you can die from wild animals and or weather as well")
