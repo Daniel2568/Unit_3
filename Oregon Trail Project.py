@@ -82,10 +82,9 @@ def rest():
     days_this_rest = random.randint(2,5)
     print(f"You rested for {days_this_rest} days")
     health += 1
-    if health > 5:
+    if health >= 5:
         print("You probably shouldnt rest if your health is full\nYou cant have more than 5 health")
-    else:
-        health += 1
+        health -= 1
 
     add_day(days_this_rest)
     consume_food(days_this_rest)
@@ -109,10 +108,11 @@ def quit():
     global game_over
     print()
     print("Hope you enjoyed the game up to this point, have a nice day")
-    game_over = True
+    game_over = True 
 
 #Game loop 
 game_over = False
+reset = False 
 
 while not game_over:
     user_choice = input("What action would you like to perform?>")
@@ -131,6 +131,18 @@ while not game_over:
         help()
     else: 
         print("Im not sure I understood your action choice")
+
+while game_over == True:
+    if miles_to_go == 0 and current_month <= 12 and current_day <= 30:
+        print("Good job you made it!")
+        print()
+        print("Hope you enjoyed the game and hope you have a great day")
+    elif health == 0 or food == 0 or miles_to_go > 0 and current_day == 31 and current_month == 12:
+        print("It seems you have died to either starvation, animal, or you didn't make it in time\nYou can type 'play again' if you wish to play again or 'quit' if you wish to stop playing")
+    if user_choice == 'play again':
+        reset = True 
+    elif user_choice == 'quit':
+        quit()
 
 
 
