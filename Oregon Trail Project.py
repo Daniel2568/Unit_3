@@ -68,6 +68,7 @@ def consume_food(days):
 
 
 def status():
+    print()
     print(f"You have {miles_to_go} miles to go")
     print()
     print(f"It is {MONTHS[current_month]} {current_day}.")
@@ -97,15 +98,16 @@ def hunt():
 
     add_day(days_this_hunt)
 
-def world_event():
-    if 
+
 
 
 def help():
-    print("Your goal is to get to Oregon City, Oregon by 12/31 just before winter starts or you die\nRemember you can travel, rest, hunt, ask for help, check your player status, or quit\n There are chances you can die from wild animals and or weather as well")
+    print()
+    print("Your goal is to get to Oregon City, Oregon by 12/31 just before winter starts or you die\nRemember you can travel, rest, hunt, ask for help or type 'help', check your player status, or quit")
 
 def quit():
     global game_over
+    print()
     print("Hope you enjoyed the game up to this point, have a nice day")
     game_over = True
 
@@ -119,10 +121,14 @@ while not game_over:
         travel()
     if user_choice == 'status':
         status()
+    if user_choice == 'rest':
+        rest()
     elif user_choice == 'hunt':
         hunt()
     elif user_choice == 'quit':
         quit()
+    elif user_choice == 'help':
+        help()
     else: 
         print("Im not sure I understood your action choice")
 
