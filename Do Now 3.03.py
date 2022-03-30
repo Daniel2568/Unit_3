@@ -21,7 +21,7 @@ mystery_function(1, 2)
 
 2.  In your Notebook
 Answer the following questions
-What happens when your run this code? How do you know what the result was? Nothing happens, the result was sytax error because it says return z not print z
+What happens when your run this code? How do you know what the result was? Nothing happens, the result was sytax error because it says return z not print z but it can be altered to do the same thing but in a different way 
 
 Keeping the function the same, rewrite the code to print out the value that the function returns.
 '''
